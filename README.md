@@ -1,2 +1,2 @@
 # Flash-Tool
-This is a java based project
+This is a C# based project
