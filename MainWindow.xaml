@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="M32RR_FLASH_TOOL.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:M32RR_FLASH_TOOL" Title="EGEA Engineering - M32R Flash Tool" Height="550" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FFE2E2E2" Loaded="Window_Loaded" Closed="Window_Closed">
+  <Grid>
+    <Menu IsMainMenu="True" Margin="0">
+      <MenuItem Header="_File">
+        <MenuItem Name="btn_Exit" Header="_Exit" Click="btn_Exit_Click" />
+      </MenuItem>
+      <MenuItem Name="btn_About" Header="_About" Click="btn_About_Click" />
+    </Menu>
+    <GroupBox Name="groupBox_Connexion" Header="Connexion Settings" IsEnabled="True" Height="100" Margin="10,20,10,0" VerticalAlignment="Top" Background="#FFFFFFFF" BorderBrush="#FFB6B6B6" FontWeight="Bold" FontStyle="Italic">
+      <Grid>
+        <Button Name="button_Connect" Content="Connect" IsEnabled="True" HorizontalAlignment="Right" Margin="0,10,9,0" Width="90" VerticalAlignment="Top" Grid.Column="1" Click="button_Connect_Click" />
+        <Button Name="button_Disconnect" Content="Disconnect" IsEnabled="False" HorizontalAlignment="Right" Margin="0,0,9,10" VerticalAlignment="Bottom" Width="90" Grid.Column="1" Click="button_Disconnect_Click" />
+        <RadioButton Name="radioBtn_Susuki_Pass" Content="Suzuki Stock Password" IsChecked="True" HorizontalAlignment="Left" Margin="2.922,9,0,0" VerticalAlignment="Top" />
+        <RadioButton Name="radioBtn_Kawasaki_Pass" Content="Kawasaki Stock Password" Margin="173,9,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <RadioButton Name="radioBtn_Pass_List" Content="Password List" Margin="2.922,28.96,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <RadioButton Name="radioBtn_Pass_Custom" Content="Custom Password" Margin="173,28.96,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Unchecked="radioBtn_Pass_Custom_Unchecked" Checked="radioBtn_Pass_Custom_Checked" />
+        <TextBlock Name="textBlock_CustomPass_ANSI" IsEnabled="False" Margin="315,28.96,291,32.12" TextWrapping="Wrap" Text="ANSI Pass" Foreground="#FF838383" />
+        <TextBox Name="textBox_Pass_byte1" Height="23" IsEnabled="False" Margin="5,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte1_TextChanged" />
+        <Button Name="button_up_byte1" Content="˄" HorizontalAlignment="Left" Height="10" Margin="32,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte1_Click" />
+        <Button Name="button_down_byte1" Content="˅" HorizontalAlignment="Left" Height="10" Margin="32,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte1_Click" />
+        <TextBox Name="textBox_Pass_byte2" Height="23" IsEnabled="False" Margin="52,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte2_TextChanged" />
+        <Button Name="button_up_byte2" Content="˄" HorizontalAlignment="Left" Height="10" Margin="79,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte2_Click" />
+        <Button Name="button_down_byte2" Content="˅" HorizontalAlignment="Left" Height="10" Margin="79,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte2_Click" />
+        <TextBox Name="textBox_Pass_byte3" Height="23" IsEnabled="False" Margin="99,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte3_TextChanged" />
+        <Button Name="button_up_byte3" Content="˄" HorizontalAlignment="Left" Height="10" Margin="126,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte3_Click" />
+        <Button Name="button_down_byte3" Content="˅" HorizontalAlignment="Left" Height="10" Margin="126,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte3_Click" />
+        <TextBox Name="textBox_Pass_byte4" Height="23" IsEnabled="False" Margin="146,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte4_TextChanged" />
+        <Button Name="button_up_byte4" Content="˄" HorizontalAlignment="Left" Height="10" Margin="173,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte4_Click" />
+        <Button Name="button_down_byte4" Content="˅" HorizontalAlignment="Left" Height="10" Margin="173,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte4_Click" />
+        <TextBox Name="textBox_Pass_byte5" Height="23" IsEnabled="False" Margin="193,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte5_TextChanged" />
+        <Button Name="button_up_byte5" Content="˄" HorizontalAlignment="Left" Height="10" Margin="220,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte5_Click" />
+        <Button Name="button_down_byte5" Content="˅" HorizontalAlignment="Left" Height="10" Margin="220,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte5_Click" />
+        <TextBox Name="textBox_Pass_byte6" Height="23" IsEnabled="False" Margin="240,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte6_TextChanged" />
+        <Button Name="button_up_byte6" Content="˄" HorizontalAlignment="Left" Height="10" Margin="267,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte6_Click" />
+        <Button Name="button_down_byte6" Content="˅" HorizontalAlignment="Left" Height="10" Margin="267,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte6_Click" />
+        <TextBox Name="textBox_Pass_byte7" Height="23" IsEnabled="False" Margin="287,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte7_TextChanged" />
+        <Button Name="button_up_byte7" Content="˄" HorizontalAlignment="Left" Height="10" Margin="315,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte7_Click" />
+        <Button Name="button_down_byte7" Content="˅" HorizontalAlignment="Left" Height="10" Margin="315,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte7_Click" />
+        <TextBox Name="textBox_Pass_byte8" Height="23" IsEnabled="False" Margin="334,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte8_TextChanged" />
+        <Button Name="button_up_byte8" Content="˄" HorizontalAlignment="Left" Height="10" Margin="362,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte8_Click" />
+        <Button Name="button_down_byte8" Content="˅" HorizontalAlignment="Left" Height="10" Margin="362,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte8_Click" />
+        <TextBox Name="textBox_Pass_byte9" Height="23" IsEnabled="False" Margin="381,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte9_TextChanged" />
+        <Button Name="button_up_byte9" Content="˄" HorizontalAlignment="Left" Height="10" Margin="409,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte9_Click" />
+        <Button Name="button_down_byte9" Content="˅" HorizontalAlignment="Left" Height="10" Margin="409,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte9_Click" />
+        <TextBox Name="textBox_Pass_byte10" Height="23" IsEnabled="False" Margin="428,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte10_TextChanged" />
+        <Button Name="button_up_byte10" Content="˄" HorizontalAlignment="Left" Height="10" Margin="456,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte10_Click" />
+        <Button Name="button_down_byte10" Content="˅" HorizontalAlignment="Left" Height="10" Margin="456,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte10_Click" />
+        <TextBox Name="textBox_Pass_byte11" Height="23" IsEnabled="False" Margin="475,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte11_TextChanged" />
+        <Button Name="button_up_byte11" Content="˄" HorizontalAlignment="Left" Height="10" Margin="503,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte11_Click" />
+        <Button Name="button_down_byte11" Content="˅" HorizontalAlignment="Left" Height="10" Margin="503,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte11_Click" />
+        <TextBox Name="textBox_Pass_byte12" Height="23" IsEnabled="False" Margin="522,0,0,3.96" TextWrapping="Wrap" CharacterCasing="Upper" MaxLength="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="25" TextChanged="textBox_Pass_byte12_TextChanged" />
+        <Button Name="button_up_byte12" Content="˄" HorizontalAlignment="Left" Height="10" Margin="550,0,0,16.41" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-2,-5,0" FontStyle="Normal" Click="button_up_byte12_Click" />
+        <Button Name="button_down_byte12" Content="˅" HorizontalAlignment="Left" Height="10" Margin="550,0,0,4.66" VerticalAlignment="Bottom" Width="15" FontSize="8" VerticalContentAlignment="Center" Padding="-5,-3,-5,-2" FontStyle="Normal" Click="button_down_byte12_Click" />
+      </Grid>
+    </GroupBox>
+    <GroupBox Name="groupBox_ECUTool" Header="ECU Tool" IsEnabled="False" Margin="0,121,10,0" Background="#FFFFFFFF" BorderBrush="#FFB6B6B6" FontWeight="Bold" FontStyle="Italic" Width="120" HorizontalAlignment="Right" Height="135" VerticalAlignment="Top">
+      <Grid>
+        <Button Name="button_Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="10,84.88,0,0" Width="90" IsEnabled="False" VerticalAlignment="Top" Click="button_Cancel_Click" />
+        <Button Name="button_Erase" Content="Erase" HorizontalAlignment="Left" Margin="10,59.92,0,0" Width="90" VerticalAlignment="Top" Click="button_Erase_Click" />
+        <Button Name="button_Read" Content="Read" HorizontalAlignment="Left" Margin="10,10,0,0" Width="90" VerticalAlignment="Top" Click="button_Read_Click" />
+        <Button Name="button_Write" Content="Write" Margin="10,34.96,0,0" IsEnabled="False" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90" Click="button_Write_Click" />
+      </Grid>
+    </GroupBox>
+    <GroupBox Header="ECU Info" Margin="0,121,135,0" Background="#FFFFFFFF" BorderBrush="#FFB6B6B6" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Right" Width="250" Height="135" VerticalAlignment="Top">
+      <Grid>
+        <TextBlock Name="textBlock_ECU_Info1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <TextBlock Name="textBlock_ECU_Info2" HorizontalAlignment="Left" Margin="10,30.96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding SoftwareSerial, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBlock Name="textBlock_ECU_Status" HorizontalAlignment="Left" Margin="10,0,0,10" TextWrapping="Wrap" Foreground="#FF1300CA" VerticalAlignment="Bottom" Text="{Binding EcuStatus, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+      </Grid>
+    </GroupBox>
+    <GroupBox Header="File Info" Margin="10,121,390,0" Background="#FFFFFFFF" BorderBrush="#FFB6B6B6" FontWeight="Bold" FontStyle="Italic" Height="135" VerticalAlignment="Top">
+      <Grid>
+        <TextBlock Name="textBlock_FileName" Text="" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <TextBlock Name="textBlock_FileSize" Text="" HorizontalAlignment="Left" Margin="10,30.96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <TextBlock Name="textBlock_FileDensoID" Text="" HorizontalAlignment="Left" Margin="10,51.92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <TextBlock Name="textBlock_FileChecksum" Text="" HorizontalAlignment="Left" Margin="10,0,0,23.2" TextWrapping="Wrap" VerticalAlignment="Bottom" />
+        <Button Name="button_LoadFile" IsEnabled="False" Content="Load" HorizontalAlignment="Right" Margin="0,0,5,8" VerticalAlignment="Bottom" Width="75" Click="button_LoadFile_Click" />
+        <Button Name="button_CorrectionFile" Visibility="Hidden" Content="Adjust CKS" HorizontalAlignment="Right" Margin="0,59,5,0" VerticalAlignment="Top" Width="75" Click="button_CorrectionFile_Click" />
+      </Grid>
+    </GroupBox>
+    <GroupBox Header="Log" Margin="10,280,10,10" Background="#FFFFFFFF" BorderBrush="#FFB6B6B6" FontWeight="Bold" FontStyle="Italic">
+      <ScrollViewer Name="scrollViewer_Log" Margin="10">
+        <TextBlock Name="textBlock_log" TextWrapping="Wrap" Foreground="#FF1300CA" FontStyle="Italic" Background="#FFFFFFFF" Text="{Binding LogProperty, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+      </ScrollViewer>
+    </GroupBox>
+    <ProgressBar Name="progressBarM32RR" Height="19" Margin="10,262,14,0" VerticalAlignment="Top" Value="{Binding QueryProgress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+  </Grid>
+</Window>
